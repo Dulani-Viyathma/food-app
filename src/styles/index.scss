@@ -80,7 +80,7 @@ a{
         width: 30px;
        
         position: relative;
-        display: flex;
+        display: none;
         flex-direction: column;
         justify-content: space-between;
         padding: 6px 0;
@@ -132,4 +132,18 @@ a{
 
 .container{
     padding-inline: 15vw;
+}
+@media screen and (max-width:768px){
+        .navbar{
+        .nav-links{
+            display:none;
+
+        }
+        .sidebar-btn{
+            display:block;
+        }
+
+    
+}
+
 }
