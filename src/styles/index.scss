@@ -141,6 +141,7 @@ a{
     box-shadow: 
       0 0 0 1000px rgba(0, 0, 0, 0.2),
       3px 0 5px var(--shadow-color);
+      animation: getAnimationDuration(.3s) slideInLeft;
 
       .sidebar-link{
         display: block;
@@ -149,9 +150,18 @@ a{
         margin-bottom: 1em;
         color:var(--text-color);
         font-size: 1.1em;
+        transform: translateX(-100px);
+        animation: slideInLeft 0.3s ease forwards;
+
+
+        @for $i from 1 through 3{
+            &:nth-child(#{$i}){
+                animation-delay: #{$i * .1}s;
+            }
+        }
         &.active{
             border-left-color: var(--primary-color);
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.2);
         }
         &:hover{
             border-left-color: var(--primary-color);
@@ -168,6 +178,7 @@ a{
 .container{
     padding-inline: 15vw;
 }
+@import "partials/animations";
 @media screen and (max-width:768px){
         .navbar{
         .nav-links{
